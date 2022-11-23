@@ -17,4 +17,46 @@ body {
   padding: 8px;
   max-width: 320px;
   margin-bottom: 16px;
+  border-radius: 4px;
+}
+
+#search-box:hover,
+#search-box:focus {
+  outline: 1px solid blue;
+}
+
+.list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+img {
+  display: inline-block;
+}
+
+p,
+h2 {
+  display: inline;
+}
+
+.list li p {
+  font-size: 20px;
+  padding-left: 5px;
+}
+
+article p {
+  font-size: 24px;
+}
+
+article h2 {
+  font-size: 38px;
+  font-weight: bolder;
+  padding-left: 10px;
+}
+
+article span {
+  font-size: 20px;
+  font-weight: bolder;
+  padding-right: 10px;
 }
