@@ -25,12 +25,20 @@ countryRefs.countrySearchBoxRef.addEventListener(
 
 function onCountrySearch(event) {
   const countryName = event.target.value.trim();
+  if (countryName === '') {
+    resetCountryList();
+    resetCountryInfoBoard();
+    return;
+  }
   const url = `${URL_BASE}/name/${countryName}?fields=name,capital,population,flags,languages`;
   resetCountryList();
   resetCountryInfoBoard();
   fetchCountries(url)
     .then(processCountryData)
-    .catch(error => constructErrorMessage(ERROR_MESSAGE));
+    .catch(error => {
+      error.message = ERROR_MESSAGE;
+      constructErrorMessage(error.message);
+    });
 }
 
 function processCountryData(data) {
